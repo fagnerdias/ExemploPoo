@@ -41,7 +41,7 @@ public class MesaView {
     }
     
     public static void save(){
-        int numero = Integer.parseInt(JOptionPane.showInputDialog("Valor:"));
+        int numero = Integer.parseInt(JOptionPane.showInputDialog("Numero:"));
         
         Mesa mesa = new Mesa();
         mesa.setNumero(numero);
@@ -56,7 +56,7 @@ public class MesaView {
     }
     
     public static void remove(){
-        int numero = Integer.parseInt(JOptionPane.showInputDialog("Valor:"));
+        int numero = Integer.parseInt(JOptionPane.showInputDialog("Numero:"));
         
         Mesa mesa = new Mesa();
         mesa.setNumero(numero);

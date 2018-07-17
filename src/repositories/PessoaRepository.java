@@ -15,22 +15,31 @@ import model.Pessoa;
  */
 public class PessoaRepository {
     
-    private final List<Pessoa> Pessoas;
+    private final List<Pessoa> pessoas;
 
     public PessoaRepository() {
-        Pessoas = new ArrayList<>();
+        pessoas = new ArrayList<>();
     }
     
-    public void addItem(Pessoa pessoa){ 
-        Pessoas.add(pessoa);
+    public void add(Pessoa pessoa){ 
+        pessoas.add(pessoa);
     }
     
-    public void removeItem(Pessoa pessoa) {
-        Pessoas.remove(pessoa);
+    public void remove(Pessoa pessoa) {
+        pessoas.remove(pessoa);
     }
       
     public List<Pessoa> listar(){
-        return Pessoas;
+        return pessoas;
     }
+    
+    public Pessoa findByCPF(String cpf){
+        for(Pessoa aux : this.pessoas){
+            if(aux.getCpf().equals(cpf)){
+                return aux;
+            }
+        }
+        return null;
+    } 
     
 }

@@ -21,11 +21,11 @@ public class ItemRepository {
         itens = new ArrayList<>();
     }
     
-    public void addItem(Item item){ 
+    public void add(Item item){ 
         itens.add(item);
     }
     
-    public void removeItem(Item item) {
+    public void remove(Item item) {
         itens.remove(item);
     }
       

@@ -14,7 +14,7 @@ import model.Cliente;
  *
  * @author fagnermorais
  */
-public class ClienteRepository {
+public class ClienteRepository extends PessoaRepository{
     
     private final List<Cliente> clientes;
 
@@ -22,15 +22,13 @@ public class ClienteRepository {
         this.clientes = new ArrayList<>();
     }
     
-    public void addItem(Cliente cliente){ 
+    public void add(Cliente cliente){ 
         this.clientes.add(cliente);
     }
     
-    public void removeItem(Cliente cliente) {
+    public void remove(Cliente cliente) {
         clientes.remove(cliente);
     }
-      
-    public List<Cliente> listar(){
-        return clientes;
-    }
+    
+    
 }

@@ -13,7 +13,7 @@ import model.Garcon;
  *
  * @author fagnermorais
  */
-public class GarconRepository {
+public class GarconRepository extends PessoaRepository{
     
     private final List<Garcon> garcons;
 
@@ -21,16 +21,12 @@ public class GarconRepository {
         garcons = new ArrayList<>();
     }
     
-    public void addItem(Garcon garcon){ 
+    public void add(Garcon garcon){ 
         garcons.add(garcon);
     }
     
-    public void removeItem(Garcon garcon) {
+    public void remove(Garcon garcon) {
         garcons.remove(garcon);
-    }
-      
-    public List<Garcon> listar(){
-        return garcons;
     }
     
 }

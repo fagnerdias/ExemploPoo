@@ -21,16 +21,26 @@ public class MesaRepository {
         mesas = new ArrayList<>();
     }
     
-    public void addItem(Mesa mesa){ 
+    public void add(Mesa mesa){ 
         mesas.add(mesa);
     }
     
-    public void removeItem(Mesa mesa) {
+    public void remove(Mesa mesa) {
         mesas.remove(mesa);
     }
       
     public List<Mesa> listar(){
         return mesas;
+    }
+    
+    public Mesa findByNumber(int number){
+        for(Mesa aux:this.mesas){
+            if(aux.getNumero() == number){
+                return aux;
+            }
+        }
+        return null;
+        
     }
     
 }

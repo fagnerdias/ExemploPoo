@@ -21,11 +21,11 @@ public class ContaRepository {
         contas = new ArrayList<>();
     }
     
-    public void addItem(Conta conta){ 
+    public void add(Conta conta){ 
         contas.add(conta);
     }
     
-    public void removeItem(Conta Conta) {
+    public void remove(Conta Conta) {
         contas.remove(Conta);
     }
       
