@@ -41,7 +41,7 @@ public class ClienteView {
         this.clienteRepository = clienteRepository;
     }
     
-    public static void save(){
+    public void save(){
         String nome = JOptionPane.showInputDialog("Nome:");
         String cpf = JOptionPane.showInputDialog("CPF:");
         String endereco = JOptionPane.showInputDialog("Endereco:");
@@ -58,27 +58,29 @@ public class ClienteView {
         cliente.setCredito(credito);
         
        
-        ClienteView clienteView = new ClienteView();
-        clienteView.getClienteController().salvar(cliente);
+        
+        this.clienteController.salvar(cliente);
+        
         JOptionPane.showMessageDialog(null, 
-                clienteView.getClienteController().listar());
+                this.getClienteController().listar());
+        
         
         
     }
     
-    public static void remove(){
+    public void remove(){
         String cpf = JOptionPane.showInputDialog("CPF:");
         Cliente cliente = new Cliente();
         cliente.setCpf(cpf);
-        ClienteView clienteView = new ClienteView();
-        clienteView.getClienteController().remover(cliente);
+        
+        this.getClienteController().remover(cliente);
     }
     
-    public static void list(){
-        ClienteView clienteView = new ClienteView();
+    public void list(){
+        
         
         JOptionPane.showMessageDialog(null, 
-                clienteView.getClienteController().listar());
+                this.getClienteController().listar());
     }
           
 }

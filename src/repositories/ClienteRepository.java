@@ -14,7 +14,7 @@ import model.Cliente;
  *
  * @author fagnermorais
  */
-public class ClienteRepository extends PessoaRepository{
+public class ClienteRepository{
     
     private final List<Cliente> clientes;
 
@@ -30,5 +30,17 @@ public class ClienteRepository extends PessoaRepository{
         clientes.remove(cliente);
     }
     
+    public List<Cliente> listar(){
+        return this.clientes;
+    }
+    
+    public Cliente findByCPF(String cpf){
+        for(Cliente aux : this.clientes){
+            if(aux.getCpf().equals(cpf)){
+                return aux;
+            }
+        }
+        return null;
+    }
     
 }

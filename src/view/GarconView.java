@@ -41,7 +41,7 @@ public class GarconView {
         this.garconRepository = garconRepository;
     }
     
-    public static void save(){
+    public void save(){
         String nome = JOptionPane.showInputDialog("Nome:");
         String cpf = JOptionPane.showInputDialog("CPF:");
         String endereco = JOptionPane.showInputDialog("Endereco:");
@@ -61,26 +61,23 @@ public class GarconView {
         garcon.setSalario(salario);
         
        
-        GarconView garconView = new GarconView();
-        garconView.getGarconController().salvar(garcon);
+        this.getGarconController().salvar(garcon);
         JOptionPane.showMessageDialog(null, 
-                garconView.getGarconController().listar());
+                this.getGarconController().listar());
         
         
     }
     
-    public static void remove(){
+    public void remove(){
         String cpf = JOptionPane.showInputDialog("CPF:");
         Garcon garcon = new Garcon();
         garcon.setCpf(cpf);
-        GarconView garconView = new GarconView();
-        garconView.getGarconController().remover(garcon);
+        this.getGarconController().remover(garcon);
     }
     
-    public static void list(){
-        GarconView garconView = new GarconView();
+    public void list(){
         
         JOptionPane.showMessageDialog(null, 
-                garconView.getGarconController().listar());
+                this.getGarconController().listar());
     }
 }

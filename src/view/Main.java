@@ -14,6 +14,13 @@ import javax.swing.JOptionPane;
 public class Main {
     
     public static void main (String args[]){
+        ContaView conta = new ContaView();
+        ClienteView cliente = new ClienteView();
+        GarconView garcon = new GarconView();
+        ItemContaView itemConta = new ItemContaView();
+        ItemView item = new ItemView();
+        MesaView mesa = new MesaView();
+        
         boolean loop = true; 
         /*
         opcões: 1 - cliente
@@ -35,53 +42,125 @@ public class Main {
 "                7 - encerrar\n");
             
             switch(opcao){
-                case "1":
-                    String opcao2 = JOptionPane.showInputDialog("Opção\n"+ 
+                case "1":  // -----  CLIENTE -------
+                    opcao = JOptionPane.showInputDialog("Opção\n"+ 
 "                1 - adicionar\n" +
 "                2 - remover\n" +
 "                3 - listar\n" +
 "                4 - encerrar\n"); 
-                    switch(opcao2){
+                    switch(opcao){
                         case "1":
-                            ClienteView.save();
+                            cliente.save();
                             break;
                         case "2":
-                            ClienteView.remove();
+                            cliente.remove();
                         case "3":
-                            ClienteView.list();
+                            cliente.list();
                         case "4":
                             break;
                         default:
                             break;
                     }
                     break;
-                case "2":
-                    String opcao3 = JOptionPane.showInputDialog("Opção\n"+ 
+                case "2":  // -----  ITEM -------
+                    opcao = JOptionPane.showInputDialog("Opção\n"+ 
 "                1 - adicionar\n" +
 "                2 - remover\n" +
 "                3 - listar\n" +
 "                4 - encerrar\n"); 
-                    switch(opcao3){
+                    switch(opcao){
                         case "1":
-                            ItemView.save();
+                            item.save();
                             break;
                         case "2":
-                            ItemView.remove();
+                            item.remove();
                         case "3":
-                            ItemView.list();
+                            item.list();
                         case "4":
                             break;
                         default:
                             break;
                     }
                     break;
-                case "3":
+                case "3": // -----  GARCON -------
+                    opcao = JOptionPane.showInputDialog("Opção\n"+ 
+"                1 - adicionar\n" +
+"                2 - remover\n" +
+"                3 - listar\n" +
+"                4 - encerrar\n"); 
+                    switch(opcao){
+                        case "1":
+                            garcon.save();
+                            break;
+                        case "2":
+                            garcon.remove();
+                        case "3":
+                            garcon.list();
+                        case "4":
+                            break;
+                        default:
+                            break;
+                    }
                     break;
-                case "4":
+                case "4":  // -----  MESA -------
+                    opcao = JOptionPane.showInputDialog("Opção\n"+ 
+"                1 - adicionar\n" +
+"                2 - remover\n" +
+"                3 - listar\n" +                           
+"                4 - encerrar\n"); 
+                    switch(opcao){
+                        case "1":
+                            mesa.save();
+                            break;
+                        case "2":
+                            mesa.remove();
+                        case "3":
+                            mesa.list();
+                        case "4":
+                            break;
+                        default:
+                            break;
+                    }
                     break;
-                case "5":
+                case "5":  // -----  CONTA -------
+                    opcao = JOptionPane.showInputDialog("Opção\n"+ 
+"                1 - adicionar\n" +
+"                2 - remover\n" +
+"                3 - listar\n" +                           
+"                4 - encerrar\n"); 
+                    switch(opcao){
+                        case "1":
+                            conta.save();
+                            break;
+                        case "2":
+                            conta.remove();
+                        case "3":
+                            conta.list();
+                        case "4":
+                            break;
+                        default:
+                            break;
+                    }
                     break;
-                case "6":
+                case "6":  // -----  ITEM-CONTA -------
+                    opcao = JOptionPane.showInputDialog("Opção\n"+ 
+"                1 - adicionar\n" +
+"                2 - remover\n" +
+"                3 - listar\n" +                           
+"                4 - encerrar\n"); 
+                    switch(opcao){
+                        case "1":
+                            itemConta.save();
+                            break;
+                        case "2":
+                            itemConta.remove();
+                        case "3":
+                            itemConta.list();
+                        case "4":
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 case "7":
                     loop = false;

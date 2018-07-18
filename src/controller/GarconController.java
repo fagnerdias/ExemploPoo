@@ -22,16 +22,16 @@ public class GarconController {
     }
 
     public void salvar(Garcon garcon) {
-        garconRepository.addItem(garcon);
+        garconRepository.add(garcon);
     }
     
     public void remover(Garcon garcon) {
-        garconRepository.removeItem(garcon);
+        garconRepository.remove(garcon);
     }
     
     public void atualizar(Garcon garconOld, Garcon garconNew){
-        garconRepository.removeItem(garconOld);
-        garconRepository.addItem(garconNew);
+        garconRepository.remove(garconOld);
+        garconRepository.add(garconNew);
     }
     
     public String listar() {

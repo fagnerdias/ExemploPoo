@@ -31,6 +31,8 @@ public class Cliente extends Pessoa {
         this.credito = credito;
     }
     
-    
+    public String toString(){
+        return this.getNome() +"\n"+ this.getCpf() +"\n"+ this.getTelefone() +"\n"+ this.getCartaoFidelidade() +"\n"+ this.getCredito();
+    }
     
 }

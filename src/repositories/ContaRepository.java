@@ -32,4 +32,13 @@ public class ContaRepository {
     public List<Conta> listar(){
         return contas;
     }
+    
+    public Conta find(Conta c){
+        for(Conta aux: this.contas){
+            if(aux.equals(c)){
+                return aux;
+            }
+        }
+        return null;
+    }
 }

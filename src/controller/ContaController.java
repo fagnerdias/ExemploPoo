@@ -22,16 +22,16 @@ public class ContaController {
     }
 
     public void salvar(Conta conta) {
-        contaRepository.addItem(conta);
+        contaRepository.add(conta);
     }
     
     public void remover(Conta conta) {
-        contaRepository.removeItem(conta);
+        contaRepository.remove(conta);
     }
     
     public void atualizar(Conta Oldconta, Conta Newconta){
-        contaRepository.removeItem(Oldconta);
-        contaRepository.addItem(Newconta);
+        contaRepository.remove(Oldconta);
+        contaRepository.add(Newconta);
     }
     
     public String listar() {

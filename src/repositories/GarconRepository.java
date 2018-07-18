@@ -13,7 +13,7 @@ import model.Garcon;
  *
  * @author fagnermorais
  */
-public class GarconRepository extends PessoaRepository{
+public class GarconRepository {
     
     private final List<Garcon> garcons;
 
@@ -28,5 +28,16 @@ public class GarconRepository extends PessoaRepository{
     public void remove(Garcon garcon) {
         garcons.remove(garcon);
     }
+    public List<Garcon> listar(){
+        return this.garcons;
+    }
     
+    public Garcon findByCPF(String cpf){
+        for(Garcon aux : this.garcons){
+            if(aux.getCpf().equals(cpf)){
+                return aux;
+            }
+        }
+        return null;
+    }
 }

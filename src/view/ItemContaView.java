@@ -41,7 +41,7 @@ public class ItemContaView {
         this.itemContaRepository = itemContaRepository;
     }
     
-    public static void save(){
+    public void save(){
         String nome = JOptionPane.showInputDialog("Nome:");
         String cpf = JOptionPane.showInputDialog("CPF:");
         String endereco = JOptionPane.showInputDialog("Endereco:");
@@ -53,26 +53,25 @@ public class ItemContaView {
         
         
        
-        ItemContaView itemContaView = new ItemContaView();
-        itemContaView.getItemContaController().salvar(itemConta);
+        this.getItemContaController().salvar(itemConta);
         JOptionPane.showMessageDialog(null, 
-                itemContaView.getItemContaController().listar());
+                this.getItemContaController().listar());
         
         
     }
     
-    public static void remove(){
+    public void remove(){
         String cpf = JOptionPane.showInputDialog("CPF:");
         ItemConta itemConta = new ItemConta();
         
-        ItemContaView itemContaView = new ItemContaView();
-        itemContaView.getItemContaController().remover(itemConta);
+        
+        this.getItemContaController().remover(itemConta);
     }
     
-    public static void list(){
-        ItemContaView itemContaView = new ItemContaView();
+    public void list(){
+        
         
         JOptionPane.showMessageDialog(null, 
-                itemContaView.getItemContaController().listar());
+                this.getItemContaController().listar());
     }
 }

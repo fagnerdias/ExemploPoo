@@ -32,4 +32,13 @@ public class ItemRepository {
     public List<Item> listar(){
         return itens;
     }
+    
+    public Item find(Item i){
+        for(Item aux: this.itens){
+            if(aux.equals(i)){
+                return aux;
+            }
+        }
+        return null;
+    }
 }

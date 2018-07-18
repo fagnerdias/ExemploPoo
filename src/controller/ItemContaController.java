@@ -21,16 +21,16 @@ public class ItemContaController {
     }
 
     public void salvar(ItemConta itemConta) {
-        itemContaRepository.addItemConta(itemConta);
+        itemContaRepository.add(itemConta);
     }
     
     public void remover(ItemConta itemConta) {
-        itemContaRepository.removeItemConta(itemConta);
+        itemContaRepository.remove(itemConta);
     }
     
     public void atualizar(ItemConta itemContaOld, ItemConta itemContaNew){
-        itemContaRepository.removeItemConta(itemContaOld);
-        itemContaRepository.addItemConta(itemContaNew);
+        itemContaRepository.remove(itemContaOld);
+        itemContaRepository.add(itemContaNew);
     }
     
     public String listar() {

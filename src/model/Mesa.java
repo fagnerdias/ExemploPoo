@@ -54,4 +54,8 @@ public class Mesa {
         }
         return true;
     }
+    
+    public String toString(){
+        return Integer.toString(numero);
+    }
 }

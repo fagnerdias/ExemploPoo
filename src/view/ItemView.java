@@ -62,7 +62,7 @@ public class ItemView {
         
     }
     
-    public static void save(){
+    public void save(){
         String descricao = JOptionPane.showInputDialog("Descrição:");
         String marca = JOptionPane.showInputDialog("Marca:");
         double valor = Double.parseDouble(JOptionPane.showInputDialog("Valor:"));
@@ -72,24 +72,24 @@ public class ItemView {
         item.setMarca(marca);
         item.setValor(valor);
        
-        ItemView itemView = new ItemView();
-        itemView.getItemController().salvar(item);
+        
+        this.getItemController().salvar(item);
         
     }
     
-    public static void remove(){
+    public void remove(){
         String marca = JOptionPane.showInputDialog("Marca:");
         Item item = new Item();
         item.setMarca(marca);
-        ItemView itemView = new ItemView();
-        itemView.getItemController().remover(item);
+        
+        this.getItemController().remover(item);
     }
     
-    public static void list(){
-        ItemView itemView = new ItemView();
+    public void list(){
+        
         
         JOptionPane.showMessageDialog(null, 
-                itemView.getItemController().listar());
+                this.getItemController().listar());
     }
     
     

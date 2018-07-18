@@ -5,6 +5,7 @@
  */
 package controller;
 
+import dao.ClienteDao;
 import model.Cliente;
 import repositories.ClienteRepository;
 
@@ -15,30 +16,41 @@ import repositories.ClienteRepository;
 public class ClienteController {
     
     private ClienteRepository itemRepository;
+    private ClienteDao clienteDao;
     
-        
+       
+    public ClienteController(){
+        this.clienteDao = new ClienteDao();
+    }
+    
     public ClienteController(ClienteRepository clienteRepository) {
         this.itemRepository = clienteRepository;
+        this.clienteDao = new ClienteDao();
+       
     }
 
     public void salvar(Cliente cliente) {
-        itemRepository.addItem(cliente);
+        //itemRepository.add(cliente);
+        this.clienteDao.add(cliente);
     }
     
     public void remover(Cliente cliente) {
-        itemRepository.removeItem(cliente);
+        //itemRepository.remove(cliente);
+        this.clienteDao.remove(cliente);
     }
     
     public void atualizar(Cliente Oldcliente, Cliente Newcliente){
-        itemRepository.removeItem(Oldcliente);
-        itemRepository.addItem(Newcliente);
+        //itemRepository.remove(Oldcliente);
+        //itemRepository.add(Newcliente);
+        this.clienteDao.update(Oldcliente, Newcliente);
     }
     
     public String listar() {
-        String lista = "Lista de itens \n";
-        for (Cliente cliente : itemRepository.listar()) {
-            lista += cliente + "\n";
-        }
-        return lista;
+        String lista = "Lista de clientes \n";
+       /* for (Cliente cliente : itemRepository.listar()) {
+            lista += cliente.toString() + "\n";
+        }*/       
+        //return lista;
+        return this.clienteDao.list().toString();
     }
 }

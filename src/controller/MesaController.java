@@ -22,16 +22,16 @@ public class MesaController {
     }
 
     public void salvar(Mesa mesa) {
-        mesaRepository.addItem(mesa);
+        mesaRepository.add(mesa);
     }
     
     public void remover(Mesa mesa) {
-        mesaRepository.removeItem(mesa);
+        mesaRepository.remove(mesa);
     }
     
     public void atualizar(Mesa mesaOld, Mesa mesaNew){
-        mesaRepository.removeItem(mesaOld);
-        mesaRepository.addItem(mesaNew);
+        mesaRepository.remove(mesaOld);
+        mesaRepository.add(mesaNew);
     }
     
     public String listar() {

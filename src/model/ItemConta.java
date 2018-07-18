@@ -57,4 +57,7 @@ public class ItemConta {
         this.quantidade = quantidade;
     }
     
+    public String toString(){
+        return conta.getMesa()+ " - " + item.getMarca()+ " - " + quantidade;
+    }
 }

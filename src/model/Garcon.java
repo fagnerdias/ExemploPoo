@@ -41,4 +41,8 @@ public class Garcon extends Pessoa{
         this.carteiraTrabalho = carteiraTrabalho;
     }
     
+    
+    public String toString(){
+        return this.getNome() +"\n"+ this.getCpf() +"\n"+ this.getTelefone() +"\n"+ this.matricula +"\n"+ this.carteiraTrabalho;
+    }
 }

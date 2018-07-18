@@ -6,6 +6,7 @@
 package model;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  *
@@ -63,4 +64,33 @@ public class Conta {
         this.mesa = mesa;
     }
    
+    
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Conta other = (Conta) obj;
+        if (!Objects.equals(this.mesa, other.mesa)) {
+            return false;
+        }
+        return true;
+    }
+    
+    public String toString(){
+        double total = 0;
+        for(ItemConta i: this.getItens()){
+            total += i.getItem().getValor();
+        }
+        if(this.itens != null){
+            return this.getCliente() + "\n" + this.getGarcon() +"\n"+ this.getMesa() +"\n" + this.getItens() +"\n" + "Total:" + total;
+        }
+        else
+            return this.getCliente() + "\n" + this.getGarcon() +"\n"+ this.getMesa() +"\n" + "Total:" + total;
+    }
 }

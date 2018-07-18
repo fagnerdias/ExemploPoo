@@ -23,16 +23,16 @@ public class ItemController {
     }
 
     public void salvar(Item item) {
-        itemRepository.addItem(item);
+        itemRepository.add(item);
     }
     
     public void remover(Item item) {
-        itemRepository.removeItem(item);
+        itemRepository.remove(item);
     }
     
     public void atualizar(Item itemOld, Item itemNew){
-        itemRepository.removeItem(itemOld);
-        itemRepository.addItem(itemNew);
+        itemRepository.remove(itemOld);
+        itemRepository.add(itemNew);
     }
     
     public String listar() {

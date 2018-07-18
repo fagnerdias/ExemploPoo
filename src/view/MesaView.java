@@ -40,35 +40,30 @@ public class MesaView {
         this.mesaRepository = mesaRepository;
     }
     
-    public static void save(){
+    public void save(){
         int numero = Integer.parseInt(JOptionPane.showInputDialog("Numero:"));
         
         Mesa mesa = new Mesa();
         mesa.setNumero(numero);
         
-       
-        MesaView mesaView = new MesaView();
-        mesaView.getMesaController().salvar(mesa);
+       this.mesaController.salvar(mesa);
         JOptionPane.showMessageDialog(null, 
-                mesaView.getMesaController().listar());
+                this.getMesaController().listar());
         
         
     }
     
-    public static void remove(){
+    public void remove(){
         int numero = Integer.parseInt(JOptionPane.showInputDialog("Numero:"));
         
         Mesa mesa = new Mesa();
         mesa.setNumero(numero);
         
-        MesaView mesaView = new MesaView();
-        mesaView.getMesaController().remover(mesa);
+        this.mesaController.remover(mesa);
     }
     
-    public static void list(){
-        MesaView mesaView = new MesaView();
-        
+    public void list(){
         JOptionPane.showMessageDialog(null, 
-                mesaView.getMesaController().listar());
+                this.getMesaController().listar());
     }
 }
